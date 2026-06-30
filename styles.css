@@ -359,9 +359,18 @@ select:hover, select:focus, input:hover, input:focus {
 .metric-card p { margin: 4px 0 0; color: var(--muted); }
 
 .page-intro { margin-bottom: 24px; }
+.page-intro.page-intro-grid { display: grid; grid-template-columns: 1fr minmax(280px, 420px); gap: 24px; align-items: center; }
 .page-intro .eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: 0.3em; font-size: 0.8rem; font-weight: 700; }
 .page-intro h1 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin: 8px 0 12px; }
 .page-intro p { color: var(--muted); max-width: 700px; line-height: 1.7; }
+.page-intro-image { width: 100%; border-radius: 24px; object-fit: cover; display: block; }
+
+.search-panel { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+.search-panel input[type="search"] { flex: 1; min-width: 220px; padding: 12px 14px; border-radius: 16px; border: 1px solid var(--line); background: #0c0d11; color: var(--text); }
+.filter-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.filter-pill { display: inline-flex; align-items: center; justify-content: center; padding: 12px 14px; border-radius: 999px; border: 1px solid var(--line); background: rgba(255,255,255,0.04); color: var(--text); font-weight: 600; }
+.image-placeholder, .video-placeholder { min-height: 220px; border: 1px dashed var(--line); border-radius: 22px; background: rgba(255,255,255,0.04); display: flex; align-items: center; justify-content: center; color: var(--muted); text-align: center; padding: 18px; font-style: italic; }
+.video-feature-card { display: grid; gap: 14px; }
 
 .grid-2, .grid-3 { display: grid; gap: 16px; }
 .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -369,7 +378,9 @@ select:hover, select:focus, input:hover, input:focus {
 .list-card, .story-card, .resource-card { padding: 20px; }
 .list-card h3, .story-card h3, .resource-card h3 { margin: 0 0 8px; }
 .list-card p, .story-card p, .resource-card p { color: var(--muted); line-height: 1.7; }
-.tag { display: inline-block; padding: 6px 10px; border-radius: 999px; color: #fcd4dc; background: var(--accent-soft); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; }
+.tag { display: inline-block; margin-bottom: 15px; padding: 10px 10px; border-radius: 999px; color: #fcd4dc; background: var(--accent-soft); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; }
+.card-title{ font-size: 1.8em; margin-bottom: 5px; }
+.card-text{ font-size: 1.15em; color: var(--muted); margin-top: 0; }
 
 .chip-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
 .chip { padding: 8px 12px; border: 1px solid var(--line); background: rgba(255,255,255,0.05); border-radius: 999px; color: var(--muted); cursor: pointer; }
