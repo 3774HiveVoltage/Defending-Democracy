@@ -266,6 +266,39 @@ const HeroSection = () => {
             </div>
           </div>
         </section>
+
+        <section className="mt-8 rounded-[2rem] border border-white/10 bg-zinc-950/80 p-6 shadow-2xl md:p-8">
+          <div className="grid gap-6 text-center md:grid-cols-3 md:items-center">
+            <div className="flex justify-center">
+              <img
+                src={goodImage}
+                alt="Positive community action"
+                className="h-48 w-full max-w-[220px] rounded-[1.25rem] object-cover shadow-lg"
+              />
+            </div>
+
+            <div className="flex flex-col items-center justify-center gap-4 px-2">
+              <h3 className="text-3xl font-bold uppercase tracking-wide text-white">WHY YOU?</h3>
+              <p className="max-w-md text-base leading-relaxed text-gray-300">
+                Extremism, in every form, is taking over the world we live in. Prevention is better than a cure-- so, every form of help these causes can get helps. See what causes matter to you.
+              </p>
+              <a
+                href="/issues.html"
+                className="inline-flex items-center justify-center rounded-full bg-[#D10024] px-6 py-3 font-semibold text-white transition hover:bg-red-700"
+              >
+                Issues
+              </a>
+            </div>
+
+            <div className="flex justify-center">
+              <img
+                src={badImage}
+                alt="Negative impact of extremism"
+                className="h-48 w-full max-w-[220px] rounded-[1.25rem] object-cover shadow-lg"
+              />
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
