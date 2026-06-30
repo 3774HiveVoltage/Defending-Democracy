@@ -97,7 +97,7 @@ select, input { padding: 10px 12px; border-radius: 12px; border: 1px solid var(-
 .chip.active { background: var(--accent); color: white; border-color: transparent; }
 
 .page-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; }
-.footer { margin-top: 36px; padding-top: 18px; color: var(--muted); border-top: 1px solid var(--line); }
+.footer { margin-top: 36px; padding-top: 18px; color: var(--muted); border-top: 1px solid var(--line); text-align: center; }
 
 @media (max-width: 900px) {
   .hero-grid, .section-grid, .page-grid, .grid-2, .grid-3 { grid-template-columns: 1fr; }
@@ -114,11 +114,12 @@ select, input { padding: 10px 12px; border-radius: 12px; border: 1px solid var(-
   .hero-card, .content-card { text-align: center; }
   .hero-grid { align-items: center; }
   .hero-grid > div { display: flex; flex-direction: column; align-items: center; }
-  .hero-title { white-space: nowrap; }
-  .hero-title br { display: none; }
+  .hero-title { white-space: normal; line-height: 1; margin-bottom: 18px; }
+  .hero-title br { display: inline; }
   .hero-copy { margin-left: auto; margin-right: auto; }
   .hero-image-frame { margin: 0 auto; width: 100%; }
   .btn { margin: 0 auto; }
   .carousel-nav { justify-content: center; }
   .static-map-frame { margin-left: auto; margin-right: auto; }
+  .footer { justify-content: center; }
 }
