@@ -29,18 +29,21 @@ img { display: block; max-width: 100%; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  padding: 16px 20px;
+  gap: 6px;
+  padding: 12px 18px;
   margin-bottom: 24px;
   border: 1px solid var(--line);
   border-radius: 999px;
   background: rgba(7, 7, 8, 0.88);
   backdrop-filter: blur(14px);
 }
-.site-brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
-.site-brand img { width: 48px; height: 48px; border-radius: 50%; }
-.nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-.nav-links a { padding: 9px 13px; border-radius: 999px; color: var(--muted); transition: all 0.2s ease; }
+.site-brand-group { display: flex; align-items: center; gap: 6px; margin-left: 6px; flex-direction: row; }
+.site-brand { display: flex; align-items: center; gap: 8px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; margin-left: 0; order: 2; }
+.site-brand-text { display: block; font-size: 1.3rem; line-height: 1.05; text-align: left; }
+.site-brand-logo { display: flex; align-items: center; justify-content: center; margin-right: 4px; margin-left: 0; order: 1; }
+.site-brand-logo img { width: 48px; height: 48px; border-radius: 0; }
+.nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; margin-right: 6px; }
+.nav-links a { padding: 8px 12px; border-radius: 999px; color: var(--muted); transition: all 0.2s ease; }
 .nav-links a:hover, .nav-links a.active { background: rgba(255,255,255,0.08); color: var(--text); }
 
 .hero-card, .content-card, .metric-card, .story-card, .resource-card {
@@ -109,8 +112,11 @@ select, input { padding: 10px 12px; border-radius: 12px; border: 1px solid var(-
   body { text-align: center; }
   .site-shell { padding: 16px 14px 40px; }
   .site-header { flex-direction: column; justify-content: center; align-items: center; border-radius: 24px; }
-  .site-brand { justify-content: center; }
-  .nav-links { justify-content: center; }
+  .site-brand-group { flex-direction: row; justify-content: center; align-items: center; margin-left: 0; }
+  .site-brand { justify-content: center; align-items: center; gap: 8px; margin-left: 0; order: 2; }
+  .site-brand-logo { margin-right: 6px; margin-left: 0; order: 1; }
+  .site-brand-text { text-align: left; }
+  .nav-links { justify-content: center; margin-right: 0; }
   .hero-card, .content-card { text-align: center; }
   .hero-grid { align-items: center; }
   .hero-grid > div { display: flex; flex-direction: column; align-items: center; }
