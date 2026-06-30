@@ -51,7 +51,8 @@ img { display: block; max-width: 100%; }
 }
 .hero-card { padding: 28px; }
 .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 24px; align-items: center; }
-.hero-title { font-size: clamp(2rem, 4vw, 3.3rem); line-height: 1.02; margin: 0 0 16px; text-transform: uppercase; letter-spacing: -0.02em; }
+.hero-title { font-size: clamp(2rem, 4vw, 3.3rem); line-height: 0.95; margin: 0 0 16px; text-transform: uppercase; letter-spacing: -0.02em; display: flex; flex-direction: column; gap: 0.1em; }
+.hero-line { display: block; }
 .hero-copy { font-size: 1.05rem; line-height: 1.7; color: var(--muted); max-width: 620px; }
 .btn { display: inline-block; padding: 12px 16px; background: var(--accent); color: white; border-radius: 999px; font-weight: 700; transition: background 0.2s ease; }
 .btn:hover { background: #b0001f; }
@@ -73,6 +74,8 @@ img { display: block; max-width: 100%; }
 select, input { padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line); background: #0c0d11; color: var(--text); }
 
 .card-list { display: grid; gap: 12px; margin-top: 16px; }
+.static-map-frame { margin-top: 16px; padding: 12px; border: 1px solid var(--line); border-radius: 20px; background: rgba(255,255,255,0.03); }
+.static-map-frame img { width: 100%; height: auto; border-radius: 14px; object-fit: contain; }
 .metric-card { padding: 16px; }
 .metric-card p { margin: 4px 0 0; color: var(--muted); }
 
