@@ -10,8 +10,8 @@ const heroImage = document.querySelector('[data-hero-image]');
 const dots = Array.from(document.querySelectorAll('[data-dot]'));
 const prevBtn = document.querySelector('[data-prev]');
 const nextBtn = document.querySelector('[data-next]');
-const countrySelect = document.querySelector('[data-country]');
 const eventList = document.querySelector('[data-event-list]');
+const customSelects = Array.from(document.querySelectorAll('[data-custom-select]'));
 
 let currentImage = 0;
 
@@ -59,15 +59,39 @@ function renderEvents(filter = '') {
     : '<div class="metric-card"><strong>No matches yet</strong><p>Try a different filter.</p></div>';
 }
 
-if (countrySelect) {
-  countrySelect.addEventListener('change', (event) => {
-    const value = event.target.value;
-    if (value === 'country') {
-      renderEvents('country');
-    } else {
-      renderEvents(value);
+customSelects.forEach((select) => {
+  const button = select.querySelector('[data-custom-toggle]');
+  const options = Array.from(select.querySelectorAll('.custom-select-option'));
+  const label = select.querySelector('[data-custom-label]');
+
+  button?.addEventListener('click', (event) => {
+    event.stopPropagation();
+    const isOpen = select.classList.contains('open');
+    customSelects.forEach((otherSelect) => otherSelect.classList.remove('open'));
+    if (!isOpen) {
+      select.classList.add('open');
     }
   });
-}
+
+  options.forEach((option) => {
+    option.addEventListener('click', () => {
+      options.forEach((item) => item.classList.remove('is-selected'));
+      option.classList.add('is-selected');
+      if (label) {
+        label.textContent = option.textContent.trim();
+      }
+      select.classList.remove('open');
+
+      if (select.dataset.customSelect === 'location') {
+        const value = option.dataset.value;
+        renderEvents(value === 'country' ? 'country' : value);
+      }
+    });
+  });
+});
+
+document.addEventListener('click', () => {
+  customSelects.forEach((select) => select.classList.remove('open'));
+});
 
 renderEvents();

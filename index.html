@@ -62,32 +62,50 @@
             <h2>Find nearby opportunities</h2>
             <p>Explore issue-based action and discover routes to civic engagement in your local community.</p>
             <div class="form-grid">
-              <label>
-                Activity
-                <select>
-                  <option>Protest</option>
-                  <option>Volunteer</option>
-                  <option>Cleanup</option>
-                </select>
+              <label class="custom-select-wrap">
+                <span>Activity</span>
+                <div class="custom-select" data-custom-select="activity">
+                  <button class="custom-select-toggle" type="button" data-custom-toggle>
+                    <span data-custom-label>Protest</span>
+                    <span class="custom-select-caret">▾</span>
+                  </button>
+                  <ul class="custom-select-menu">
+                    <li class="custom-select-option is-selected" data-value="Protest">Protest</li>
+                    <li class="custom-select-option" data-value="Volunteer">Volunteer</li>
+                    <li class="custom-select-option" data-value="Cleanup">Cleanup</li>
+                  </ul>
+                </div>
               </label>
-              <label>
-                Purpose
-                <select>
-                  <option>Environmental</option>
-                  <option>Voting</option>
-                  <option>Gender Equality</option>
-                  <option>Racial Equality</option>
-                </select>
+              <label class="custom-select-wrap">
+                <span>Purpose</span>
+                <div class="custom-select" data-custom-select="purpose">
+                  <button class="custom-select-toggle" type="button" data-custom-toggle>
+                    <span data-custom-label>Environmental</span>
+                    <span class="custom-select-caret">▾</span>
+                  </button>
+                  <ul class="custom-select-menu">
+                    <li class="custom-select-option is-selected" data-value="Environmental">Environmental</li>
+                    <li class="custom-select-option" data-value="Voting">Voting</li>
+                    <li class="custom-select-option" data-value="Gender Equality">Gender Equality</li>
+                    <li class="custom-select-option" data-value="Racial Equality">Racial Equality</li>
+                  </ul>
+                </div>
               </label>
-              <label>
-                Location
-                <select data-country>
-                  <option value="all">All locations</option>
-                  <option value="5 miles">5 miles</option>
-                  <option value="10 miles">10 miles</option>
-                  <option value="15 miles">15 miles</option>
-                  <option value="country">Select country</option>
-                </select>
+              <label class="custom-select-wrap">
+                <span>Location</span>
+                <div class="custom-select" data-custom-select="location">
+                  <button class="custom-select-toggle" type="button" data-custom-toggle>
+                    <span data-custom-label>All locations</span>
+                    <span class="custom-select-caret">▾</span>
+                  </button>
+                  <ul class="custom-select-menu">
+                    <li class="custom-select-option is-selected" data-value="all">All locations</li>
+                    <li class="custom-select-option" data-value="5 miles">5 miles</li>
+                    <li class="custom-select-option" data-value="10 miles">10 miles</li>
+                    <li class="custom-select-option" data-value="15 miles">15 miles</li>
+                    <li class="custom-select-option" data-value="country">Select country</li>
+                  </ul>
+                </div>
               </label>
             </div>
             <div class="static-map-frame">
