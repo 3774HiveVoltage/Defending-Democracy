@@ -1,4 +1,4 @@
-const images = [
+const heroImages = [
   './public/images/hero-1.png',
   './public/images/hero-2.png',
   './public/images/hero-3.png',
@@ -6,43 +6,68 @@ const images = [
   './public/images/hero-5.png',
 ];
 
-const heroImage = document.querySelector('[data-hero-image]');
-const dots = Array.from(document.querySelectorAll('[data-dot]'));
-const prevBtn = document.querySelector('[data-prev]');
-const nextBtn = document.querySelector('[data-next]');
+const youthImages = [
+  './src/assets/DefendingDemocracyCarosuel2/1.png',
+  './src/assets/DefendingDemocracyCarosuel2/2.png',
+  './src/assets/DefendingDemocracyCarosuel2/3.png',
+  './src/assets/DefendingDemocracyCarosuel2/4.png',
+  './src/assets/DefendingDemocracyCarosuel2/5.png',
+];
+
 const eventList = document.querySelector('[data-event-list]');
 const customSelects = Array.from(document.querySelectorAll('[data-custom-select]'));
 
-let currentImage = 0;
+function initCarousel({ imageSelector, prevSelector, nextSelector, dotSelector, images, interval = 5000, altPrefix = 'Image' }) {
+  const imageElement = document.querySelector(imageSelector);
+  const prevBtn = document.querySelector(prevSelector);
+  const nextBtn = document.querySelector(nextSelector);
+  const dots = Array.from(document.querySelectorAll(dotSelector));
+  let currentIndex = 0;
 
-function setImage(index) {
-  if (!heroImage) return;
-  heroImage.src = images[index];
-  heroImage.alt = `Hero image ${index + 1}`;
-  dots.forEach((dot, dotIndex) => dot.classList.toggle('active', dotIndex === index));
-}
+  function setImage(index) {
+    if (!imageElement) return;
+    currentIndex = index;
+    imageElement.src = images[index];
+    imageElement.alt = `${altPrefix} ${index + 1}`;
+    dots.forEach((dot, dotIndex) => dot.classList.toggle('active', dotIndex === index));
+  }
 
-function showNext() {
-  currentImage = (currentImage + 1) % images.length;
-  setImage(currentImage);
-}
+  function showNext() {
+    setImage((currentIndex + 1) % images.length);
+  }
 
-function showPrevious() {
-  currentImage = (currentImage - 1 + images.length) % images.length;
-  setImage(currentImage);
-}
+  function showPrevious() {
+    setImage((currentIndex - 1 + images.length) % images.length);
+  }
 
-if (prevBtn) prevBtn.addEventListener('click', showPrevious);
-if (nextBtn) nextBtn.addEventListener('click', showNext);
-
-dots.forEach((dot, index) => dot.addEventListener('click', () => { currentImage = index; setImage(currentImage); }));
-
-if (heroImage) {
+  prevBtn?.addEventListener('click', showPrevious);
+  nextBtn?.addEventListener('click', showNext);
+  dots.forEach((dot, index) => dot.addEventListener('click', () => setImage(index)));
   setImage(0);
-  window.setInterval(() => {
-    showNext();
-  }, 5000);
+
+  if (interval && imageElement) {
+    window.setInterval(showNext, interval);
+  }
 }
+
+initCarousel({
+  imageSelector: '[data-hero-image]',
+  prevSelector: '[data-prev]',
+  nextSelector: '[data-next]',
+  dotSelector: '[data-hero-dot]',
+  images: heroImages,
+  altPrefix: 'Hero image',
+});
+
+initCarousel({
+  imageSelector: '[data-youth-image]',
+  prevSelector: '[data-youth-prev]',
+  nextSelector: '[data-youth-next]',
+  dotSelector: '[data-youth-dot]',
+  images: youthImages,
+  interval: 5000,
+  altPrefix: 'Youth engagement',
+});
 
 const events = [
   { title: 'Downtown cleanup drive', detail: 'Volunteer • Environmental • 5 miles' },
