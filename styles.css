@@ -359,11 +359,14 @@ select:hover, select:focus, input:hover, input:focus {
 .metric-card p { margin: 4px 0 0; color: var(--muted); }
 
 .page-intro { margin-bottom: 24px; }
-.page-intro.page-intro-grid { display: grid; grid-template-columns: 1fr minmax(280px, 420px); gap: 24px; align-items: center; }
+.page-intro.page-intro-grid { display: grid; grid-template-columns: 1fr minmax(280px, 420px); gap: 24px; align-items: start; min-width: 0; }
+.page-intro.page-intro-grid > div { min-width: 0; }
 .page-intro .eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: 0.3em; font-size: 0.8rem; font-weight: 700; }
 .page-intro h1 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin: 8px 0 12px; }
 .page-intro p { color: var(--muted); max-width: 700px; line-height: 1.7; }
 .page-intro-image { width: 100%; border-radius: 24px; object-fit: cover; display: block; }
+
+.issues-grid { display: grid; gap: 16px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
 .search-panel { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
 .search-panel input[type="search"] { flex: 1; min-width: 220px; padding: 12px 14px; border-radius: 16px; border: 1px solid var(--line); background: #0c0d11; color: var(--text); }
@@ -390,9 +393,12 @@ select:hover, select:focus, input:hover, input:focus {
 .footer { margin-top: 36px; padding-top: 18px; color: var(--muted); border-top: 1px solid var(--line); text-align: center; }
 
 @media (max-width: 900px) {
-  .hero-grid, .section-grid, .page-grid, .grid-2, .grid-3, .feature-grid, .video-grid, .resources-grid { grid-template-columns: 1fr; }
+  .hero-grid, .section-grid, .page-grid, .issues-grid, .page-intro.page-intro-grid, .grid-2, .grid-3, .feature-grid, .video-grid, .resources-grid { grid-template-columns: 1fr; }
   .resources-header { flex-direction: column; align-items: flex-start; }
   .form-grid { grid-template-columns: 1fr; }
+  .filter-row { grid-template-columns: 1fr; }
+  .search-panel { flex-direction: column; }
+  .page-intro.page-intro-grid { align-items: stretch; }
   .site-header { border-radius: 24px; flex-wrap: wrap; justify-content: center; }
 }
 
