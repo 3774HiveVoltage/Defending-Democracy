@@ -1,12 +1,102 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Defending Democracy</title>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="site-brand" href="./index.html">
+          <img src="./src/assets/R.png" alt="Defending Democracy logo" />
+          <span>Defending Democracy</span>
+        </a>
+        <nav class="nav-links">
+          <a class="active" href="./index.html">Home</a>
+          <a href="./about.html">About</a>
+          <a href="./projects.html">Projects</a>
+          <a href="./issues.html">Issues</a>
+          <a href="./testimonies.html">Testimonies</a>
+          <a href="./students.html">Students</a>
+          <a href="./educate.html">Educate</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero-card">
+          <div class="hero-grid">
+            <div>
+              <h1 class="hero-title">The world needs you.</h1>
+              <p class="hero-copy">Youth across the globe are finding their voices. At Defending Democracy, we amplify those voices for the whole world to hear.</p>
+              <div style="margin-top: 18px;">
+                <a class="btn" href="./about.html">About DD</a>
+              </div>
+            </div>
+            <div class="hero-image-frame">
+              <img data-hero-image src="./public/images/hero-1.png" alt="Hero image" />
+            </div>
+          </div>
+
+          <div class="carousel-nav">
+            <button class="icon-btn" data-prev aria-label="Previous image">‹</button>
+            <div class="carousel-dots">
+              <span class="active" data-dot></span>
+              <span data-dot></span>
+              <span data-dot></span>
+              <span data-dot></span>
+              <span data-dot></span>
+            </div>
+            <button class="icon-btn" data-next aria-label="Next image">›</button>
+          </div>
+        </section>
+
+        <section class="section-grid">
+          <article class="content-card">
+            <h2>Find nearby opportunities</h2>
+            <p>Explore issue-based action and discover routes to civic engagement in your local community.</p>
+            <div class="form-grid">
+              <label>
+                Activity
+                <select>
+                  <option>Protest</option>
+                  <option>Volunteer</option>
+                  <option>Cleanup</option>
+                </select>
+              </label>
+              <label>
+                Purpose
+                <select>
+                  <option>Environmental</option>
+                  <option>Voting</option>
+                  <option>Gender Equality</option>
+                  <option>Racial Equality</option>
+                </select>
+              </label>
+              <label>
+                Location
+                <select data-country>
+                  <option value="all">All locations</option>
+                  <option value="5 miles">5 miles</option>
+                  <option value="10 miles">10 miles</option>
+                  <option value="15 miles">15 miles</option>
+                  <option value="country">Select country</option>
+                </select>
+              </label>
+            </div>
+          </article>
+
+          <article class="content-card">
+            <h3>Live map preview</h3>
+            <div class="card-list" data-event-list></div>
+          </article>
+        </section>
+      </main>
+
+      <footer class="footer">Built for GitHub Pages deployment from the main branch.</footer>
+    </div>
+
+    <script src="./script.js"></script>
   </body>
 </html>
