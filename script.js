@@ -39,7 +39,7 @@ dots.forEach((dot, index) => dot.addEventListener('click', () => { currentImage 
 
 if (heroImage) {
   setImage(0);
-  setInterval(() => {
+  window.setInterval(() => {
     showNext();
   }, 5000);
 }
