@@ -6,6 +6,35 @@ const heroImages = [
   './public/images/hero-5.png',
 ];
 
+const savedTheme = window.localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+  document.documentElement.dataset.theme = 'dark';
+}
+
+const themeToggle = document.querySelector('[data-theme-toggle]');
+const themeLabel = document.querySelector('[data-theme-label]');
+
+function updateThemeToggle() {
+  const isDark = document.documentElement.dataset.theme === 'dark';
+  if (themeLabel) themeLabel.textContent = isDark ? 'Light mode' : 'Dark mode';
+  themeToggle?.setAttribute('aria-pressed', String(isDark));
+  themeToggle?.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+}
+
+themeToggle?.addEventListener('click', () => {
+  const isDark = document.documentElement.dataset.theme === 'dark';
+  if (isDark) {
+    delete document.documentElement.dataset.theme;
+    window.localStorage.setItem('theme', 'light');
+  } else {
+    document.documentElement.dataset.theme = 'dark';
+    window.localStorage.setItem('theme', 'dark');
+  }
+  updateThemeToggle();
+});
+
+updateThemeToggle();
+
 const youthImages = [
   './src/assets/DefendingDemocracyCarosuel2/1.png',
   './src/assets/DefendingDemocracyCarosuel2/2.png',
